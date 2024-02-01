@@ -1,0 +1,61 @@
+<div class="container my-4">
+  <h2>Ajouter un Produit</h2>
+  <form action="#nowhere" class="mt-5">
+    <div class="form-row">
+      <div class="form-group col-sm-2 col-md-2 col-lg-2">
+        <label for="id">ID Produit</label>
+        <input
+          type="text"
+          [(ngModel)]="newProduit.idProduit"
+          name="idProduit"
+          class="form-control"
+          id="id"
+        />
+      </div>
+
+      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+        <label for="nomProduit">Nom Produit</label>
+        <input
+          type="text"
+          [(ngModel)]="newProduit.nomProduit"
+          name="nomProduit"
+          class="form-control"
+          id="nomProduit"
+          placeholder="nom"
+        />
+      </div>
+    </div>
+    <div class="form-group col-sm-2 col-md-2 col-lg-2">
+      <label for="prixProduit">Prix Produit</label>
+      <input
+        type="number"
+        [(ngModel)]="newProduit.prixProduit"
+        name="prixProduit"
+        class="form-control"
+        id="prixProduit"
+        placeholder="0.0"
+      />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+        <label for="dateCreation">Date Création</label>
+        <input
+          [(ngModel)]="newProduit.dateCreation"
+          name="dateCreation"
+          type="date"
+          class="form-control"
+          id="dateCreation"
+        />
+      </div>
+    </div>
+
+    <button type="submit" (click)="addProduit()" class="btn btn-success mt-3">
+      Register
+    </button>
+  </form>
+
+  <div class="alert alert-success mt-5" role="alert" *ngIf="message">
+    {{ message }}
+  </div>
+</div>
